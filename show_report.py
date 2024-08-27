@@ -1,5 +1,8 @@
 import sqlite3
 import json
+import datetime
+
+current_date=datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
 
 conn = sqlite3.connect('animal_fountains.db')
 cursor = conn.cursor()
@@ -27,7 +30,7 @@ html_content = f"""
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa com Leaflet</title>
+    <title>Animal Fountains Madrid - Map</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -90,6 +93,7 @@ html_content = f"""
 <body>
 
 <h1>Map of Animal Fountains in Madrid, Spain</h1>
+<h4>{current_date}</h4>
 
 <div id="map"></div>
 
