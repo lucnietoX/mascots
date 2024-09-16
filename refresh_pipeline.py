@@ -1,6 +1,5 @@
-import pandas
 import sqlite3
-import requests,json
+import requests
 import pandas as pd
 
 responseContentType="application/json"
